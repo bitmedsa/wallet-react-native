@@ -3,6 +3,7 @@ import { View, Alert, StyleSheet, KeyboardAvoidingView, TouchableHighlight, Text
 import AuthService from './../../services/authService'
 import TextInput from './../../components/textInput'
 import Colors from './../../config/colors'
+import Constants from './../../config/constants'
 import Header from './../../components/header'
 
 export default class ForgetPassword extends Component {
@@ -56,12 +57,6 @@ export default class ForgetPassword extends Component {
               autoCapitalize="none"
               keyboardType="email-address"
               onChangeText={(email) => this.setState({ email })}
-            />
-            <TextInput
-              title="Company"
-              placeholder="e.g rehive"
-              autoCapitalize="none"
-              onChangeText={(company) => this.setState({ company })}
             />
             <TouchableHighlight
               style={styles.submit}

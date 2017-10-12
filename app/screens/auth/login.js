@@ -5,6 +5,7 @@ import Auth from './../../util/auth'
 import ResetNavigation from './../../util/resetNavigation'
 import TextInput from './../../components/textInput'
 import Colors from './../../config/colors'
+import Constants from './../../config/constants'
 import Header from './../../components/header'
 
 export default class Login extends Component {
@@ -13,14 +14,14 @@ export default class Login extends Component {
   }
 
   constructor(props) {
-    super(props)
-    this.checkLoggedIn()
-    this.state = {
-      email: '',
-      company: '',
-      password: '',
+        super(props)
+        this.checkLoggedIn()
+        this.state = {
+            email: '',
+            company: Constants.company_id,
+            password: '',
+        }
     }
-  }
 
   checkLoggedIn = async () => {
     try {
@@ -68,13 +69,6 @@ export default class Login extends Component {
                 keyboardType="email-address"
                 value={this.state.email}
                 onChangeText={(email) => this.setState({ email })}
-              />
-              <TextInput
-                title="Company"
-                autoCapitalize="none"
-                placeholder="e.g rehive"
-                value={this.state.company}
-                onChangeText={(company) => this.setState({ company })}
               />
               <TextInput
                 title="Password"
