@@ -15,7 +15,7 @@ export default class ForgetPassword extends Component {
     super(props)
     this.state = {
       email: '',
-      company: '',
+      company: Constants.company_id,
     }
   }
 
